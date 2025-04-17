@@ -152,7 +152,7 @@ $allChan = 1 if defined($zipcode) && defined($zlineupId);
 $sleeptime = $options{S} if defined $options{S};
 $shiftMinutes = $options{m} if defined $options{m};
 $ncdays = $days - $ncdays; # make relative to the end
-$urlRoot = 'https://tvlistings.gracenote.com/grid-affiliates.html?aid=lat';
+$urlRoot = 'https://tvlistings.gracenote.com/';
 $urlAssets = 'https://zap2it.tmsimg.com/assets/';
 $tvgurlRoot = 'http://mobilelistings.tvguide.com/';
 $tvgMapiRoot = 'http://mapi.tvguide.com/';
@@ -1343,7 +1343,7 @@ sub parseJSON {
           $programs{$cp}{imageUrl} = $turl;
         }
         if ($program->{'seriesId'} ne '' && $program->{'tmsId'} ne '') {
-           $programs{$cp}{url} = $urlRoot . "overview-affiliates.html?programSeriesId=" 
+           $programs{$cp}{url} = $urlRoot . "grid-affiliates.html?programSeriesId=" 
                 . $program->{seriesId} . "&tmsId=" . $program->{tmsId};
         }
 
